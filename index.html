@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>WebCam Access</title>
 </head>
+
 <body onload="init();">
+    <h2>WebCam View</h2>
+
     <div id="container">
         <video autoplay="true" id="videoElement">
-        
-        </video>        
+        </video>
     </div>
     <div id="buttonDiv">
-        <button id="stop">Stop Video</button>
-        <button onclick="snapshot()">Take Snapshot</button> 
+        <button onclick="snapshot()">Take Screenshot</button>
+        <button id="stop">Stop Webcam</button>
     </div>
 
-    <p>Screenshots : </p>
-    <canvas  id="myCanvas" width="400" height="350"></canvas>  
+    <p><strong>Screenshots: </strong></p>
+    <canvas id="myCanvas" width="400" height="350"></canvas>
 
-    <script src = "script.js"></script>
+    <div id="audio-div">
+        <h2> Test Audio: </h2>
+        <audio controls>
+            <source src="test.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div id="video-div">
+        <h2> Test Video Stream: </h2>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/vLtS3XlqTxw">
+        </iframe>
+    </div>
+    <div>
+        <h2> Test Video Playback: </h2>
+        <video width="320" height="240" controls>
+            <source src="test.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

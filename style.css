@@ -1,14 +1,15 @@
+h2{
+    text-align: center;
+}
 #container {
     margin: 0px auto;
-    width: 500px;
-    height: 375px;
     border: 10px #333 solid;
 }
+
 #videoElement {
-    width: 500px;
-    height: 375px;
-    background-color: #666;
+    background-color: #DCDCDC;
 }
+
 button {
     margin-top: 20px;
     font-size: 12px;
@@ -18,8 +19,63 @@ button {
     border: 5px solid black;
 }
 
-#buttonDiv{
+#buttonDiv {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #container {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    #videoElement {
+        width: 60vw;
+        height: 60vh;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #container {
+        width: 100vw;
+        height: 60vh;
+    }
+
+    #videoElement {
+        width: 80vw;
+        height: 60vh;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #container {
+        width: 500px;
+        height: 375px;
+    }
+
+    #videoElement {
+        width: 500px;
+        height: 375px;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #container {
+        width: 500px;
+        height: 375px;
+    }
+
+    #videoElement {
+        width: 500px;
+        height: 375px;
+
+    }
+
 }
