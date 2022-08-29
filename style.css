@@ -3,7 +3,7 @@ h2{
 }
 #container {
     margin: 0px auto;
-    border: 10px #333 solid;
+    border: 5px #333 solid;
 }
 
 #videoElement {
@@ -25,18 +25,7 @@ button {
     gap: 10px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    #container {
-        width: 60vw;
-        height: 60vh;
-    }
 
-    #videoElement {
-        width: 60vw;
-        height: 60vh;
-    }
-}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -75,7 +64,6 @@ button {
     #videoElement {
         width: 500px;
         height: 375px;
-
     }
 
 }
