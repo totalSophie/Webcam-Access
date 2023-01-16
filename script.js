@@ -43,29 +43,48 @@ function getDocument() {
   console.log('trying to get mini app document');
   try {
     console.log('here we go');
-    my.downloadFile({
-      url: 'https://docs.prudentiallife.co.ke/assets/miniapp/terms_conditions/prutect.pdf',
-      success({ apFilePath }) {
-        console.log(apFilePath);
-        my.openDocument({
+    my.call(
+      'downloadFile',
+      {
+        url: 'https://www.safaricom.co.ke/images/Amended-TsCs-Postpay-and-Prepay-Bundles.pdf',
+      },
+      (res) => {
+        const { apFilePath } = res;
+        my.call('openDocument', {
           filePath: apFilePath,
           fileType: 'pdf',
-          success: (res) => {
-            console.log('failres', res);
-          },
-          fail: (res) => {
-            console.log('failres', res);
-          },
         });
       },
-      fail(res) {
-        console.log('error', res);
-        alert(res);
+      (error) => {
+        console.log('error');
         my.alert({
           content: res.errorMessage || res.error,
         });
-      },
-    });
+      }
+    );
+    // my.downloadFile({
+    //   url: 'https://docs.prudentiallife.co.ke/assets/miniapp/terms_conditions/prutect.pdf',
+    //   success({ apFilePath }) {
+    //     console.log(apFilePath);
+    //     my.openDocument({
+    //       filePath: apFilePath,
+    //       fileType: 'pdf',
+    //       success: (res) => {
+    //         console.log('failres', res);
+    //       },
+    //       fail: (res) => {
+    //         console.log('failres', res);
+    //       },
+    //     });
+    //   },
+    //   fail(res) {
+    //     console.log('error', res);
+    //     alert(res);
+    //     my.alert({
+    //       content: res.errorMessage || res.error,
+    //     });
+    //   },
+    // });
     // my.downloadFile({
     //   url: 'https://www.safaricom.co.ke/images/Amended-TsCs-Postpay-and-Prepay-Bundles.pdf',
     //   success({ apFilePath }) {
