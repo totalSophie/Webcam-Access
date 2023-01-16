@@ -40,25 +40,59 @@ function snapshot() {
 }
 
 function getDocument() {
+  console.log('trying to get mini app document');
   try {
+    console.log('here we go');
     my.downloadFile({
       url: 'https://www.safaricom.co.ke/images/Amended-TsCs-Postpay-and-Prepay-Bundles.pdf',
       success({ apFilePath }) {
+        console.log('success res 0', apFilePath);
         console.log(apFilePath);
         my.openDocument({
           filePath: apFilePath,
           fileType: 'pdf',
           success: (res) => {
-            console.log('res', res);
+            console.log('success res 1', res);
           },
           fail: (res) => {
-            console.log('res', res);
+            console.log(' fail error 1', res);
           },
         });
       },
       fail(res) {
+        console.log('error download error 0', res);
         my.alert({
           content: res.errorMessage || res.error,
+        });
+      },
+    });
+  } catch (error) {
+    console.log('error', error);
+    alert(error);
+  }
+}
+
+function makePayBillPayment() {
+  try {
+    my.downloadFile({});
+    my.call('payBill', {
+      businessID: '1112223',
+      billReference: '123456789',
+      amount: '30.0',
+      currency: 'KES', // currencyCode to be used - only KES supported for now
+      reason: 'Electricity bill', // optional field
+      success: function (res) {
+        console.log('success', res);
+        my.alert({
+          title: 'Success',
+          content: JSON.stringify(res),
+        });
+      },
+      fail: function (res) {
+        console.log(('errror', error));
+        my.alert({
+          title: 'Fail',
+          content: JSON.stringify(res),
         });
       },
     });
