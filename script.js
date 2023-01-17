@@ -61,52 +61,6 @@ function getDocument() {
         );
       }
     );
-    // my.downloadFile({
-    //   url: 'https://docs.prudentiallife.co.ke/assets/miniapp/terms_conditions/prutect.pdf',
-    //   success({ apFilePath }) {
-    //     console.log(apFilePath);
-    //     my.openDocument({
-    //       filePath: apFilePath,
-    //       fileType: 'pdf',
-    //       success: (res) => {
-    //         console.log('failres', res);
-    //       },
-    //       fail: (res) => {
-    //         console.log('failres', res);
-    //       },
-    //     });
-    //   },
-    //   fail(res) {
-    //     console.log('error', res);
-    //     alert(res);
-    //     my.alert({
-    //       content: res.errorMessage || res.error,
-    //     });
-    //   },
-    // });
-    // my.downloadFile({
-    //   url: 'https://www.safaricom.co.ke/images/Amended-TsCs-Postpay-and-Prepay-Bundles.pdf',
-    //   success({ apFilePath }) {
-    //     console.log('success res 0', apFilePath);
-    //     console.log(apFilePath);
-    //     my.openDocument({
-    //       filePath: apFilePath,
-    //       fileType: 'pdf',
-    //       success: (res) => {
-    //         console.log('success res 1', res);
-    //       },
-    //       fail: (res) => {
-    //         console.log(' fail error 1', res);
-    //       },
-    //     });
-    //   },
-    //   fail(res) {
-    //     console.log('error download error 0', res);
-    //     my.alert({
-    //       content: res.errorMessage || res.error,
-    //     });
-    //   },
-    // });
   } catch (error) {
     console.log('error', error);
     alert(error);
@@ -121,15 +75,17 @@ function makePayBillPayment() {
       amount: '30.0',
       currency: 'KES', // currencyCode to be used - only KES supported for now
       reason: 'Electricity bill', // optional field
-      success: function (res) {
+      success: (res) => {
         console.log('success', res);
+        alert(res);
         AlipayJSBridge.alert({
           title: 'Success',
           content: JSON.stringify(res),
         });
       },
-      fail: function (res) {
-        console.log(('errror', error));
+      fail: (res) => {
+        alert(res);
+        console.log(('errror', res));
         AlipayJSBridge.alert({
           title: 'Fail',
           content: JSON.stringify(res),
@@ -149,12 +105,14 @@ function makeTillPayment() {
       amount: '25.0',
       currency: 'KES', // currencyCode to be used - only KES supported for now
       reason: 'Jon Groceries', // optional field
-      success: function (res) {
+      success: (res) => {
+        alert(res);
         AlipayJSBridge.alert({
           content: JSON.stringify(res),
         });
       },
-      fail: function (res) {
+      fail: (res) => {
+        alert(res);
         AlipayJSBridge.alert({
           content: JSON.stringify(res),
         });
