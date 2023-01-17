@@ -80,11 +80,11 @@ function makePayBillPayment() {
       },
       (res) => {
         console.log('success', res);
-        alert(res);
-        AlipayJSBridge.alert({
-          title: 'Success',
-          content: JSON.stringify(res),
-        });
+        alert('paybill', JSON.stringify(res));
+        // AlipayJSBridge.alert({
+        //   title: 'Success',
+        //   content: JSON.stringify(res),
+        // });
       },
       (res) => {
         alert(res);
@@ -112,10 +112,10 @@ function makeTillPayment() {
         reason: 'Jon Groceries', // optional field
       },
       (res) => {
-        alert(res);
-        AlipayJSBridge.alert({
-          content: JSON.stringify(res),
-        });
+        alert('BuyGoods', JSON.stringify(res));
+        // AlipayJSBridge.alert({
+        //   content: JSON.stringify(res),
+        // });
       },
       (res) => {
         alert(res);
