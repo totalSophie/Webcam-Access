@@ -69,13 +69,16 @@ function getDocument() {
 
 function makePayBillPayment() {
   try {
-    AlipayJSBridge.call('payBill', {
-      businessID: '1112223',
-      billReference: '123456789',
-      amount: '30.0',
-      currency: 'KES', // currencyCode to be used - only KES supported for now
-      reason: 'Electricity bill', // optional field
-      success: (res) => {
+    AlipayJSBridge.call(
+      'payBill',
+      {
+        businessID: '1112223',
+        billReference: '123456789',
+        amount: '30.0',
+        currency: 'KES', // currencyCode to be used - only KES supported for now
+        reason: 'Electricity bill', // optional field
+      },
+      (res) => {
         console.log('success', res);
         alert(res);
         AlipayJSBridge.alert({
@@ -83,15 +86,15 @@ function makePayBillPayment() {
           content: JSON.stringify(res),
         });
       },
-      fail: (res) => {
+      (res) => {
         alert(res);
         console.log(('errror', res));
         AlipayJSBridge.alert({
           title: 'Fail',
           content: JSON.stringify(res),
         });
-      },
-    });
+      }
+    );
   } catch (error) {
     console.log('error', error);
     alert(error);
@@ -100,24 +103,27 @@ function makePayBillPayment() {
 
 function makeTillPayment() {
   try {
-    AlipayJSBridge.call('buyGoods', {
-      tillNumber: '89900',
-      amount: '25.0',
-      currency: 'KES', // currencyCode to be used - only KES supported for now
-      reason: 'Jon Groceries', // optional field
-      success: (res) => {
+    AlipayJSBridge.call(
+      'buyGoods',
+      {
+        tillNumber: '89900',
+        amount: '25.0',
+        currency: 'KES', // currencyCode to be used - only KES supported for now
+        reason: 'Jon Groceries', // optional field
+      },
+      (res) => {
         alert(res);
         AlipayJSBridge.alert({
           content: JSON.stringify(res),
         });
       },
-      fail: (res) => {
+      (res) => {
         alert(res);
         AlipayJSBridge.alert({
           content: JSON.stringify(res),
         });
-      },
-    });
+      }
+    );
   } catch (error) {
     console.log('error', error);
     alert(error);
