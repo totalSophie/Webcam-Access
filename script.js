@@ -43,23 +43,22 @@ function getDocument() {
   console.log('trying to get mini app document');
   try {
     console.log('here we go');
-    my.call(
+    AlipayJSBridge.call(
       'downloadFile',
       {
         url: 'https://www.safaricom.co.ke/images/Amended-TsCs-Postpay-and-Prepay-Bundles.pdf',
       },
-      (res) => {
-        const { apFilePath } = res;
-        my.call('openDocument', {
-          filePath: apFilePath,
-          fileType: 'pdf',
-        });
-      },
-      (error) => {
-        console.log('error');
-        my.alert({
-          content: res.errorMessage || res.error,
-        });
+      ({ apFilePath }) => {
+        AlipayJSBridge.call(
+          'openDocument',
+          {
+            filePath: apFilePath,
+            fileType: 'pdf',
+          },
+          ({ res }) => {
+            console.log('res', res);
+          }
+        );
       }
     );
     // my.downloadFile({
