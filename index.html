@@ -9,8 +9,16 @@
   </head>
 
   <body onload="init();">
-    <h2>WebCam View</h2>
+    <h2>ANT APIs</h2>
+    <div id="mini-appfeatures">
+      <button onclick="getDocument()">Download Mini App File</button>
+      <br />
+      <button onclick="makePayBillPayment()">Make PayBill Payment</button>
+      <br />
+      <button onclick="makeTillPayment()">Make Till Payment</button>
+    </div>
 
+    <h2>WebCam View</h2>
     <div id="container">
       <video autoplay="true" id="videoElement"></video>
     </div>
@@ -38,13 +46,6 @@
         src="https://www.youtube.com/embed/vLtS3XlqTxw"
       >
       </iframe>
-    </div>
-    <div id="mini-appfeatures">
-      <button onclick="getDocument()">Download Mini App File</button>
-      <br />
-      <button onclick="makePayBillPayment()">Make PayBill Payment</button>
-      <br />
-      <button onclick="makeTillPayment()">Make Till Payment</button>
     </div>
 
     <script src="script.js"></script>
