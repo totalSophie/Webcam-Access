@@ -39,10 +39,15 @@ function snapshot() {
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 }
 
+function openWebPage() {
+  AlipayJSBridge.call('downloadFile', {
+    url: 'https://www.youtube.com/embed/vLtS3XlqTxw',
+  });
+}
+
 function getDocument() {
   console.log('trying to get mini app document');
   try {
-    console.log('here we go');
     AlipayJSBridge.call(
       'downloadFile',
       {
