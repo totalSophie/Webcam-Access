@@ -80,19 +80,24 @@ function makePayBillPayment() {
       },
       (res) => {
         console.log('success', res);
-        alert('paybill', JSON.stringify(res));
-        // AlipayJSBridge.alert({
-        //   title: 'Success',
-        //   content: JSON.stringify(res),
-        // });
+        alert(`paybill, ${JSON.stringify(res)}`);
+        AlipayJSBridge(
+          'alert',
+          { title: 'Success', content: JSON.stringify(res) },
+          () => {},
+          () => {}
+        );
+        //
       },
       (res) => {
         alert(res);
         console.log(('errror', res));
-        AlipayJSBridge.alert({
-          title: 'Fail',
-          content: JSON.stringify(res),
-        });
+        AlipayJSBridge(
+          'alert',
+          { title: 'Fail', content: JSON.stringify(res) },
+          () => {},
+          () => {}
+        );
       }
     );
   } catch (error) {
@@ -112,16 +117,22 @@ function makeTillPayment() {
         reason: 'Jon Groceries', // optional field
       },
       (res) => {
-        alert('BuyGoods', JSON.stringify(res));
+        alert(`BuyGoods ${JSON.stringify(res)}`);
         // AlipayJSBridge.alert({
         //   content: JSON.stringify(res),
         // });
       },
       (res) => {
         alert(res);
-        AlipayJSBridge.alert({
-          content: JSON.stringify(res),
-        });
+        AlipayJSBridge(
+          'alert',
+          {
+            title: 'Fail',
+            content: JSON.stringify(res),
+          },
+          () => {},
+          () => {}
+        );
       }
     );
   } catch (error) {
