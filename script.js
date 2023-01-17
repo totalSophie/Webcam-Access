@@ -40,9 +40,7 @@ function snapshot() {
 }
 
 function openWebPage() {
-  AlipayJSBridge.call('downloadFile', {
-    url: 'https://www.youtube.com/embed/vLtS3XlqTxw',
-  });
+  window.open('https://youtube.com', '_blank');
 }
 
 function getDocument() {
