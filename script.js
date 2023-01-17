@@ -115,7 +115,7 @@ function getDocument() {
 
 function makePayBillPayment() {
   try {
-    my.call('payBill', {
+    AlipayJSBridge.call('payBill', {
       businessID: '1112223',
       billReference: '123456789',
       amount: '30.0',
@@ -123,14 +123,14 @@ function makePayBillPayment() {
       reason: 'Electricity bill', // optional field
       success: function (res) {
         console.log('success', res);
-        my.alert({
+        AlipayJSBridge.alert({
           title: 'Success',
           content: JSON.stringify(res),
         });
       },
       fail: function (res) {
         console.log(('errror', error));
-        my.alert({
+        AlipayJSBridge.alert({
           title: 'Fail',
           content: JSON.stringify(res),
         });
@@ -144,18 +144,18 @@ function makePayBillPayment() {
 
 function makeTillPayment() {
   try {
-    my.call('buyGoods', {
+    AlipayJSBridge.call('buyGoods', {
       tillNumber: '89900',
       amount: '25.0',
       currency: 'KES', // currencyCode to be used - only KES supported for now
       reason: 'Jon Groceries', // optional field
       success: function (res) {
-        my.alert({
+        AlipayJSBridge.alert({
           content: JSON.stringify(res),
         });
       },
       fail: function (res) {
-        my.alert({
+        AlipayJSBridge.alert({
           content: JSON.stringify(res),
         });
       },
