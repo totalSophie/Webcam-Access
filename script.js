@@ -115,7 +115,6 @@ function getDocument() {
 
 function makePayBillPayment() {
   try {
-    my.downloadFile({});
     my.call('payBill', {
       businessID: '1112223',
       billReference: '123456789',
@@ -133,6 +132,30 @@ function makePayBillPayment() {
         console.log(('errror', error));
         my.alert({
           title: 'Fail',
+          content: JSON.stringify(res),
+        });
+      },
+    });
+  } catch (error) {
+    console.log('error', error);
+    alert(error);
+  }
+}
+
+function makeTillPayment() {
+  try {
+    my.call('buyGoods', {
+      tillNumber: '89900',
+      amount: '25.0',
+      currency: 'KES', // currencyCode to be used - only KES supported for now
+      reason: 'Jon Groceries', // optional field
+      success: function (res) {
+        my.alert({
+          content: JSON.stringify(res),
+        });
+      },
+      fail: function (res) {
+        my.alert({
           content: JSON.stringify(res),
         });
       },
