@@ -49,7 +49,7 @@ function getDocument() {
     AlipayJSBridge.call(
       'downloadFile',
       {
-        url: 'https://www.safaricom.co.ke/images/Amended-TsCs-Postpay-and-Prepay-Bundles.pdf',
+        url: 'https://av.sc.com/ke/content/docs/ke-online-mutual-funds-faq.pdf',
       },
       ({ apFilePath }) => {
         AlipayJSBridge.call(
