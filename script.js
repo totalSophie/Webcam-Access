@@ -73,6 +73,7 @@ function getDocument() {
 // AlipayJSBridge.call('jsAPI', {}, ()=> {}, () =>{})
 
 function makePayBillPayment() {
+  alert(`paybill,`);
   try {
     AlipayJSBridge.call(
       'payBill',
@@ -112,6 +113,7 @@ function makePayBillPayment() {
 }
 
 function makeTillPayment() {
+  alert(`paybill,`);
   try {
     AlipayJSBridge.call(
       'buyGoods',
