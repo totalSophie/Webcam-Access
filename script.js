@@ -70,6 +70,8 @@ function getDocument() {
   }
 }
 
+// AlipayJSBridge.call('jsAPI', {}, ()=> {}, () =>{})
+
 function makePayBillPayment() {
   try {
     AlipayJSBridge.call(
