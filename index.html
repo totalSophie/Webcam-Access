@@ -49,34 +49,34 @@
       <button onclick="makeTillPayment()">Make Till Payment</button>
     </div>
 
-    <!-- <script src="script.js"></script>  -->
+    <script src="script.js"></script>
     <script>
-      function getDocument() {
-        console.log('trying to get mini app document');
-        try {
-          AlipayJSBridge.call(
-            'downloadFile',
-            {
-              url: 'https://av.sc.com/ke/content/docs/ke-online-mutual-funds-faq.pdf',
-            },
-            ({ apFilePath }) => {
-              AlipayJSBridge.call(
-                'openDocument',
-                {
-                  filePath: apFilePath,
-                  fileType: 'pdf',
-                },
-                ({ res }) => {
-                  console.log('res', res);
-                }
-              );
-            }
-          );
-        } catch (error) {
-          console.log('error', error);
-          alert(error);
-        }
-      }
+      // function getDocument() {
+      //   console.log('trying to get mini app document');
+      //   try {
+      //     AlipayJSBridge.call(
+      //       'downloadFile',
+      //       {
+      //         url: 'https://av.sc.com/ke/content/docs/ke-online-mutual-funds-faq.pdf',
+      //       },
+      //       ({ apFilePath }) => {
+      //         AlipayJSBridge.call(
+      //           'openDocument',
+      //           {
+      //             filePath: apFilePath,
+      //             fileType: 'pdf',
+      //           },
+      //           ({ res }) => {
+      //             console.log('res', res);
+      //           }
+      //         );
+      //       }
+      //     );
+      //   } catch (error) {
+      //     console.log('error', error);
+      //     alert(error);
+      //   }
+      // }
     </script>
   </body>
 </html>
