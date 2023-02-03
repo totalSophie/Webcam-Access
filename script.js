@@ -73,7 +73,6 @@ function getDocument() {
 // AlipayJSBridge.call('jsAPI', {}, ()=> {}, () =>{})
 
 function makePayBillPayment() {
-  alert(`paybill,`);
   try {
     AlipayJSBridge.call(
       'payBill',
@@ -149,5 +148,13 @@ function makeTillPayment() {
 }
 
 function openDomain() {
-  window.open('https://www.youtube.com/', '_blank');
+  // window.open('https://www.youtube.com/', '_blank');
+  try {
+    AlipayJSBridge('pushWindow', {
+      url: 'https://www.youtube.com/',
+      param: { closeCurrentWindow: false },
+    });
+  } catch (error) {
+    alert(`error on pushwindow`);
+  }
 }
