@@ -147,3 +147,7 @@ function makeTillPayment() {
     alert(error);
   }
 }
+
+function openDomain() {
+  window.open('https://www.youtube.com/', '_blank');
+}
