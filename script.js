@@ -86,7 +86,7 @@ function makePayBillPayment() {
       (res) => {
         console.log('success', res);
         alert(`paybill, ${JSON.stringify(res)}`);
-        AlipayJSBridge(
+        AlipayJSBridge.call(
           'alert',
           { title: 'Success', content: JSON.stringify(res) },
           () => {},
@@ -97,7 +97,7 @@ function makePayBillPayment() {
       (res) => {
         alert(res);
         console.log(('errror', res));
-        AlipayJSBridge(
+        AlipayJSBridge.call(
           'alert',
           { title: 'Fail', content: JSON.stringify(res) },
           () => {},
@@ -130,7 +130,7 @@ function makeTillPayment() {
       },
       (res) => {
         alert(res);
-        AlipayJSBridge(
+        AlipayJSBridge.call(
           'alert',
           {
             title: 'Fail',
@@ -150,7 +150,7 @@ function makeTillPayment() {
 function openDomain() {
   // window.open('https://www.youtube.com/', '_blank');
   try {
-    AlipayJSBridge('pushWindow', {
+    AlipayJSBridge.call('pushWindow', {
       url: 'https://www.youtube.com/',
       param: { closeCurrentWindow: false },
     });
