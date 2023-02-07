@@ -86,12 +86,11 @@ function makePayBillPayment() {
       (res) => {
         console.log('success', res);
         alert(`paybill, ${JSON.stringify(res)}`);
-        AlipayJSBridge.call(
-          'alert',
-          { title: 'Success', content: JSON.stringify(res) },
-          () => {},
-          () => {}
-        );
+        // AlipayJSBridge.call
+        //   'alert',{ title: 'Success', content: JSON.stringify(res) },
+        //   () => {},
+        //   () => {}
+        // );
         //
       },
       (res) => {
@@ -147,8 +146,11 @@ function makeTillPayment() {
   }
 }
 
-function openDomain() {
-  // window.open('https://www.youtube.com/', '_blank');
+function openDomainUsingWindow() {
+  window.open('https://www.youtube.com/', '_blank');
+}
+
+function openDomainUsingAlipayJSBridge() {
   try {
     AlipayJSBridge.call('pushWindow', {
       url: 'https://www.youtube.com/',
