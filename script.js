@@ -151,7 +151,8 @@ function openDomainUsingWindow() {
 }
 
 function myOpenURL() {
-  my.navigateTo({ url: '/pages/domainb/domainb' });
+  const url = encodeURIComponent('https://youtube.com');
+  my.navigateTo({ url: `/pages/domainb/domainb?url=${url}` });
 }
 
 function openDomainUsingAlipayJSBridge() {
