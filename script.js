@@ -147,7 +147,11 @@ function makeTillPayment() {
 }
 
 function openDomainUsingWindow() {
-  window.open('https://www.youtube.com/', '_blank');
+  window.location.replace('https://www.youtube.com/');
+}
+
+function myOpenURL() {
+  my.navigateTo({ url: 'pages/domainb/domainb' });
 }
 
 function openDomainUsingAlipayJSBridge() {
@@ -160,3 +164,8 @@ function openDomainUsingAlipayJSBridge() {
     alert(`error on pushwindow`);
   }
 }
+
+/**
+ * Gobanga => Risk team
+ * Fares => CyberSecurity
+ */
