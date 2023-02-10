@@ -147,11 +147,11 @@ function makeTillPayment() {
 }
 
 function openDomainUsingWindow() {
-  window.location.replace('https://www.youtube.com/');
+  window.open('https://www.youtube.com/', '_blank');
 }
 
 function myOpenURL() {
-  my.navigateTo({ url: 'pages/domainb/domainb' });
+  my.navigateTo({ url: '/pages/domainb/domainb' });
 }
 
 function openDomainUsingAlipayJSBridge() {
