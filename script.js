@@ -49,7 +49,8 @@ function getDocument() {
     AlipayJSBridge.call(
       'downloadFile',
       {
-        url: 'https://av.sc.com/ke/content/docs/ke-online-mutual-funds-faq.pdf',
+        url: 'https://wealth-test.sc.com/wm/data/gbl/omf/ms/doc/Document/26f582bcc78c00056e04e1076a681a58.msdoc/?key=277c7034c4553750ca72946ac58565acdcb4077c205711b55d7737590705b5c6',
+        // url: 'https://av.sc.com/ke/content/docs/ke-online-mutual-funds-faq.pdf',
       },
       ({ apFilePath }) => {
         AlipayJSBridge.call(
@@ -159,7 +160,7 @@ function myOpenURL() {
 function openDomainUsingAlipayJSBridge() {
   try {
     AlipayJSBridge.call('pushWindow', {
-      url: 'https://wealth-test.sc.com/wm/data/gbl/omf/ms/doc/Document/b0e84a314e48fc93da56ed7ad4d04eca.msdoc/?key=277c7034c4553750ca72946ac58565acdcb4077c205711b55d7737590705b5c6',
+      url: 'https://www.youtube.com/',
       param: { closeCurrentWindow: false },
     });
   } catch (error) {
