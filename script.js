@@ -152,13 +152,14 @@ function openDomainUsingWindow() {
 
 function myOpenURL() {
   const url = encodeURIComponent('https://youtube.com');
+  console.log('url being passed', url);
   my.navigateTo({ url: `/pages/domainb/domainb?url=${url}` });
 }
 
 function openDomainUsingAlipayJSBridge() {
   try {
     AlipayJSBridge.call('pushWindow', {
-      url: 'https://www.youtube.com/',
+      url: 'https://wealth-test.sc.com/wm/data/gbl/omf/ms/doc/Document/b0e84a314e48fc93da56ed7ad4d04eca.msdoc/?key=277c7034c4553750ca72946ac58565acdcb4077c205711b55d7737590705b5c6',
       param: { closeCurrentWindow: false },
     });
   } catch (error) {
